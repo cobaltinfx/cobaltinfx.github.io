@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cobalt InFX — Innovative Software Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface-hover: #1a1a26;
+    --border: #1e1e2e;
+    --text: #e8e6e3;
+    --text-secondary: #8a8898;
+    --accent: #7c5bf5;
+    --accent-glow: rgba(124, 91, 245, 0.15);
+    --accent-soft: #6347c7;
+    --warm: #c9a87c;
+    --success: #4ade80;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 16px 0;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  nav .inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav .logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  nav .logo span { color: var(--accent); }
+
+  nav .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  nav .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    transition: color 0.2s;
+    letter-spacing: 0.3px;
+  }
+
+  nav .nav-links a:hover { color: var(--text); }
+
+  /* ─── SECTIONS ─── */
+  section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .section-subtitle {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    line-height: 1.8;
+    margin-bottom: 48px;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding-top: 160px;
+    padding-bottom: 80px;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .hero .company-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(38px, 5vw, 56px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--warm);
+  }
+
+  .hero p {
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  /* ─── DIVIDER ─── */
+  .section-divider {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  .section-divider hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* ─── PRODUCT HEADER ─── */
+  .product-header {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .product-header .product-info {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .product-header .product-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .product-header h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+
+  .product-header h2 em {
+    font-style: italic;
+    color: var(--warm);
+  }
+
+  .product-header p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 480px;
+  }
+
+  .product-header .product-badges {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .product-header .pbadge {
+    font-size: 12px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .product-header .pbadge-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+  }
+
+  .icon-lock { background: rgba(74, 222, 128, 0.15); color: var(--success); }
+  .icon-chip { background: rgba(124, 91, 245, 0.15); color: var(--accent); }
+  .icon-globe { background: rgba(201, 168, 124, 0.15); color: var(--warm); }
+
+  .product-header .download-cta {
+    text-align: center;
+  }
+
+  .product-header .download-cta img {
+    height: 44px;
+  }
+
+  .product-header .download-cta p {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 8px;
+  }
+
+  /* ─── FEATURE GRID ─── */
+  .features { padding-bottom: 60px; }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .feature-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .feature-card:hover {
+    border-color: #2a2a3e;
+    background: var(--surface-hover);
+  }
+
+  .feature-card .fc-icon {
+    font-size: 22px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .feature-card h3 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .feature-card p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* ─── COMPARISON ─── */
+  .comparison { padding-bottom: 60px; }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .compare-table th {
+    padding: 12px 14px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .compare-table th.highlight { color: var(--accent); font-weight: 600; }
+
+  .compare-table th:first-child { text-align: left; }
+
+  .compare-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-secondary);
+  }
+
+  .compare-table td:first-child {
+    text-align: left;
+    color: var(--text);
+  }
+
+  .compare-table tr:last-child td { border-bottom: none; }
+
+  .check { color: var(--success); }
+  .cross { color: var(--text-secondary); opacity: 0.4; }
+  .val { color: var(--warm); font-weight: 500; }
+
+  /* ─── TIERS ─── */
+  .tiers { padding-bottom: 60px; }
+
+  .tier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    align-items: start;
+  }
+
+  .tier-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    position: relative;
+  }
+
+  .tier-card.highlighted {
+    border-color: var(--accent);
+    box-shadow: 0 0 40px var(--accent-glow);
+  }
+
+  .tier-card .tier-badge {
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 100px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .tier-card .tier-name { font-size: 18px; font-weight: 500; margin-bottom: 4px; }
+
+  .tier-card .tier-price {
+    font-family: 'Instrument Serif', serif;
+    font-size: 32px;
+    color: var(--warm);
+    margin-bottom: 4px;
+  }
+
+  .tier-card .tier-price span {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 300;
+  }
+
+  .tier-card .tier-note { font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; }
+
+  .tier-card ul { list-style: none; padding: 0; }
+
+  .tier-card ul li {
+    font-size: 12px;
+    padding: 4px 0;
+    padding-left: 18px;
+    position: relative;
+    color: var(--text-secondary);
+  }
+
+  .tier-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-size: 11px;
+  }
+
+  /* ─── PRIVACY ─── */
+  .privacy { padding-top: 60px; padding-bottom: 60px; }
+
+  .privacy-content {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px;
+  }
+
+  .privacy-content h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    margin-top: 24px;
+  }
+
+  .privacy-content h3:first-child { margin-top: 0; }
+
+  .privacy-content p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    line-height: 1.8;
+  }
+
+  .privacy-highlight {
+    background: rgba(74, 222, 128, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.15);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 13px;
+    color: var(--success);
+    font-weight: 400;
+  }
+
+  /* ─── SUPPORT ─── */
+  .support { padding-bottom: 80px; }
+
+  .support-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .support-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+  }
+
+  .support-card h3 { font-size: 16px; font-weight: 500; margin-bottom: 12px; }
+
+  .support-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+
+  .support-card .contact-row {
+    font-size: 12px;
+    color: var(--text-secondary);
+    padding: 7px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .support-card .contact-row:last-of-type { border-bottom: 1px solid var(--border); }
+
+  .support-card .contact-row strong {
+    color: var(--text);
+    font-weight: 500;
+    display: inline-block;
+    width: 70px;
+  }
+
+  .email-btn {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+  }
+
+  .email-btn:hover { background: var(--accent-soft); }
+  .email-btn:active { transform: scale(0.98); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 36px 32px;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 11px;
+    color: var(--text-secondary);
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  footer .footer-links {
+    margin-top: 10px;
+  }
+
+  footer .footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 11px;
+    margin: 0 10px;
+    transition: color 0.2s;
+  }
+
+  footer .footer-links a:hover { color: var(--text); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .feature-grid { grid-template-columns: 1fr; }
+    .tier-grid { grid-template-columns: 1fr; }
+    .support-grid { grid-template-columns: 1fr; }
+    .product-header { flex-direction: column; text-align: center; }
+    .product-header .product-info { min-width: unset; }
+    .product-header p { max-width: unset; }
+    .product-header .product-badges { justify-content: center; }
+    nav .nav-links { gap: 14px; }
+    nav .nav-links a { font-size: 11px; }
+    .privacy-content { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="inner">
+    <a href="#" class="logo">COBALT <span>INFX</span></a>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="#support">Support</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── HERO — COBALT INFX ─── -->
+<section class="hero" id="home">
+  <div class="company-name">Cobalt InFX</div>
+  <h1>Innovative Software<br><em>Solutions</em></h1>
+  <p>We build intelligent, privacy-first software for professionals who demand precision and control. Every product runs on-device — your data stays yours.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PRODUCTS — VOX DICTUM
+     ═══════════════════════════════════════════════════════════ -->
+
+<div class="section-divider"><hr></div>
+
+<section id="products">
+
+  <!-- Product Header -->
+  <div class="product-header">
+    <div class="product-info">
+      <div class="product-badge">Product</div>
+      <h2>Vox <em>Dictum</em></h2>
+      <p>Private, on-device transcription for macOS. Import any recording, label speakers, and generate intelligent summaries — all processed locally on your Mac.</p>
+      <div class="product-badges">
+        <div class="pbadge"><div class="pbadge-icon icon-lock">🔒</div> 100% on-device</div>
+        <div class="pbadge"><div class="pbadge-icon icon-chip">⚡</div> Apple Silicon</div>
+        <div class="pbadge"><div class="pbadge-icon icon-globe">🌍</div> Transcription in 60+ languages</div>
+      </div>
+    </div>
+    <div class="download-cta">
+      <!-- Replace with App Store link when live -->
+      <img src="VoxDictum1024.png" alt="Vox Dictum" style="width:80px; height:80px; border-radius:18px; box-shadow: 0 4px 20px rgba(124, 91, 245, 0.3);">
+      <p style="font-size:14px; color:var(--warm); font-weight:500; margin-top:12px; letter-spacing:0.5px;">Coming Soon</p>
+      <p>macOS 14.6+ · Apple Silicon (M1 or later)</p>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="features">
+    <div class="feature-grid">
+      <div class="feature-card">
+        <span class="fc-icon">🎙️</span>
+        <h3>AI Transcription</h3>
+        <p>Import audio or video. AI-powered speech recognition transcribes with high accuracy across 60+ languages. AI summaries available in English and major languages.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">👥</span>
+        <h3>Speaker Recognition</h3>
+        <p>Automatically detect and label speakers. Rename a speaker once — all phrases in that file update. With Pro+, the same voice is recognised across multiple recordings.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">📝</span>
+        <h3>AI Powered Summary</h3>
+        <p>Generate structured summaries with key decisions, action items, and speaker contributions. On-device AI — no cloud, no data sharing.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">🔇</span>
+        <h3>Audio Enhancement</h3>
+        <p>Built-in speech enhancement, spectral noise gate, and voice activity detection. Better input, better output.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">📤</span>
+        <h3>Flexible Export</h3>
+        <p>Export as TXT, Markdown, or SRT subtitles — all with speaker names. Ready for your workflow.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">🛡️</span>
+        <h3>Complete Privacy</h3>
+        <p>Zero data collection. Zero analytics. Zero cloud processing. Your recordings and transcripts never leave your Mac.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Comparison -->
+  <div class="comparison">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th style="text-align:left;"></th>
+          <th class="highlight">Vox Dictum</th>
+          <th>MacWhisper</th>
+          <th>Otter.ai</th>
+          <th>Dragon</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>On-device processing</td>
+          <td class="check">✓</td>
+          <td class="check">✓</td>
+          <td class="cross">✗</td>
+          <td class="check">✓</td>
+        </tr>
+        <tr>
+          <td>Zero data collection</td>
+          <td class="check">✓</td>
+          <td class="check">✓</td>
+          <td class="cross">✗</td>
+          <td class="cross">✗</td>
+        </tr>
+        <tr>
+          <td>AI Summary</td>
+          <td class="check">✓ On-device</td>
+          <td class="cross">✗</td>
+          <td>Cloud</td>
+          <td class="cross">✗</td>
+        </tr>
+        <tr>
+          <td>Speaker recognition</td>
+          <td class="check">✓ On-device</td>
+          <td class="cross">✗</td>
+          <td>Cloud</td>
+          <td class="check">✓</td>
+        </tr>
+        <tr>
+          <td>Overlap detection</td>
+          <td class="check">✓</td>
+          <td class="cross">✗</td>
+          <td class="cross">✗</td>
+          <td class="cross">✗</td>
+        </tr>
+        <tr>
+          <td>Audio enhancement</td>
+          <td class="check">✓</td>
+          <td class="cross">✗</td>
+          <td class="cross">✗</td>
+          <td class="cross">✗</td>
+        </tr>
+        <tr>
+          <td>Free tier</td>
+          <td class="val">Unlimited</td>
+          <td class="cross">✗</td>
+          <td>300 min/mo</td>
+          <td class="cross">✗</td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td class="val">From £7.99/mo</td>
+          <td>€59 one-time</td>
+          <td>$16.99/mo</td>
+          <td>$699</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Pricing -->
+  <div class="tiers" id="pricing">
+    <div class="section-label">Pricing</div>
+    <div class="section-title">Start free. Upgrade when you need more.</div>
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-name">Free</div>
+        <div class="tier-price">£0</div>
+        <div class="tier-note">No credit card required</div>
+        <ul>
+          <li>Unlimited transcriptions</li>
+          <li>Standard transcription model</li>
+          <li>Speaker diarisation and renaming</li>
+          <li>Transcription in 60+ languages</li>
+          <li>Audio enhancement suite</li>
+          <li>Export as TXT, MD, SRT</li>
+          <li>Suggested Settings advisor</li>
+          <li>URL and podcast import</li>
+        </ul>
+      </div>
+      <div class="tier-card highlighted">
+        <div class="tier-badge">Popular</div>
+        <div class="tier-name">Pro</div>
+        <div class="tier-price">£7.99 <span>/month</span></div>
+        <div class="tier-note">Everything in Free, plus:</div>
+        <ul>
+          <li>Advanced transcription models</li>
+          <li>AI Powered Summary</li>
+          <li>Overlap resolution</li>
+          <li>Custom vocabulary corrections</li>
+          <li>Speaker reallocation</li>
+          <li>Transcript phrase splitting</li>
+        </ul>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Pro+</div>
+        <div class="tier-price">£12.99 <span>/month</span></div>
+        <div class="tier-note">Everything in Pro, plus:</div>
+        <ul>
+          <li>Speaker recognition (voice matching)</li>
+          <li>Consistent labels across batch jobs</li>
+          <li>Auto-label propagation</li>
+          <li>Project-level speaker re-run</li>
+        </ul>
+        <div style="margin-top:14px; padding-top:10px; border-top:1px solid var(--border); font-size:11px; color:var(--warm);">
+          Annual: £99.99/year — save 36%
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PRIVACY POLICY
+     ═══════════════════════════════════════════════════════════ -->
+
+<div class="section-divider"><hr></div>
+
+<section class="privacy" id="privacy">
+  <div class="section-label">Privacy Policy</div>
+  <div class="section-title">Your data stays on your device</div>
+  <div class="privacy-content">
+    <div class="privacy-highlight">
+      🔒 Cobalt InFX products collect no data. Recordings, transcripts, and summaries are processed entirely on your device and are never transmitted to any server.
+    </div>
+
+    <h3>Vox Dictum — What we process</h3>
+    <p>Vox Dictum processes audio and video recordings to produce text transcripts, speaker labels, and AI-generated summaries. All processing is performed locally on your Mac using on-device machine learning models. No audio, text, or metadata is sent to Cobalt InFX, Apple, or any third party during processing.</p>
+
+    <h3>What we collect</h3>
+    <p>Nothing. Vox Dictum does not collect personal data, usage analytics, crash reports, telemetry, or any other information from your device. The app contains no analytics frameworks, no tracking pixels, and no third-party SDKs that collect data.</p>
+
+    <h3>Network activity</h3>
+    <p>The only network activity in Vox Dictum is: (1) downloading AI models on first use (~2 GB, one-time), (2) downloading additional transcription models when you select a new model size, and (3) Apple verifying your subscription status. No recording data, transcript content, or user-generated content is transmitted over the network at any time.</p>
+
+    <h3>Speaker recognition</h3>
+    <p>Speaker voice matching (Pro+ tier) uses on-device neural network inference to compare voice characteristics within a single processing session. Voice embeddings are computed transiently in memory and discarded when the processing job completes. No biometric data is stored persistently. No voice profiles are created or retained between sessions.</p>
+
+    <h3>Subscriptions</h3>
+    <p>Subscriptions are managed entirely by Apple through the App Store. Cobalt InFX does not process payments, store credit card information, or have access to your Apple ID credentials.</p>
+
+    <h3>Data storage</h3>
+    <p>Your transcripts, speaker names, vocabulary corrections, and summaries are stored locally in your Mac's Application Support directory within the app's sandbox. This data is included in Time Machine backups and is deleted when you uninstall the app. Cobalt InFX has no access to this data.</p>
+
+    <h3>Children's privacy</h3>
+    <p>Cobalt InFX products are not directed at children under 13. We do not knowingly collect any information from children.</p>
+
+    <h3>Changes to this policy</h3>
+    <p>If we update this policy, we will post the revised version on this page with an updated effective date.</p>
+
+    <p style="margin-top:20px; color:var(--text); font-weight:400;">Effective date: April 2026</p>
+    <p>Contact: support@cobaltinfx.com</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SUPPORT
+     ═══════════════════════════════════════════════════════════ -->
+
+<section class="support" id="support">
+  <div class="section-label">Support</div>
+  <div class="section-title">Need help?</div>
+  <div class="support-grid">
+
+    <div class="support-card">
+      <h3>Before contacting us</h3>
+      <p>Check the built-in Help section in Vox Dictum: Settings → Help. Most common questions are answered there.</p>
+
+      <h3>Common topics</h3>
+      <p>Model downloads require a stable internet connection (~2–7 GB depending on features used). Transcription with advanced models may take longer than the recording duration — this is normal for on-device processing.</p>
+
+      <h3>Vox Dictum system requirements</h3>
+      <div class="contact-row"><strong>macOS</strong> 14.6 (Sonoma) or later</div>
+      <div class="contact-row"><strong>Chip</strong> Apple Silicon (M1 or later)</div>
+      <div class="contact-row"><strong>RAM</strong> 8 GB minimum, 16 GB recommended</div>
+      <div class="contact-row"><strong>Storage</strong> ~4–7 GB for AI models (downloaded on first use)</div>
+    </div>
+
+    <div class="support-card">
+      <h3>Send us a message</h3>
+      <p>Click the button below to open your email client. Describe your issue and attach screenshots if relevant.</p>
+
+      <p style="font-size:12px; margin-bottom:16px;">Please include:</p>
+      <ul style="list-style:none; padding:0; margin-bottom:20px;">
+        <li style="font-size:12px; color:var(--text-secondary); padding:3px 0; padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">›</span> What you did</li>
+        <li style="font-size:12px; color:var(--text-secondary); padding:3px 0; padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">›</span> What you expected</li>
+        <li style="font-size:12px; color:var(--text-secondary); padding:3px 0; padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">›</span> What happened</li>
+        <li style="font-size:12px; color:var(--text-secondary); padding:3px 0; padding-left:16px; position:relative;"><span style="position:absolute; left:0; color:var(--accent);">›</span> Screenshots (attach as .jpg or .png)</li>
+      </ul>
+
+      <a href="mailto:support@cobaltinfx.com?subject=Cobalt%20InFX%20Support%20Request" class="email-btn">
+        Email Support
+      </a>
+      <p style="font-size:11px; color:var(--text-secondary); margin-top:12px; text-align:center;">support@cobaltinfx.com</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <p>© 2026 Cobalt InFX Ltd. All rights reserved. London, United Kingdom.</p>
+  <div class="footer-links">
+    <a href="#products">Products</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#support">Support</a>
+  </div>
+</footer>
+
+</body>
+</html>
