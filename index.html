@@ -11,6 +11,58 @@
 <meta name="author" content="Cobalt InFX">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://cobaltinfx.com/">
+<!-- Structured Data (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Vox Dictum",
+  "description": "Private, on-device transcription app for macOS. Transcribe recordings, tag speakers, and generate AI summaries — 100% on your Mac.",
+  "operatingSystem": "macOS 14.6+",
+  "applicationCategory": "ProductivityApplication",
+  "processorRequirements": "Apple Silicon (M1 or later)",
+  "url": "https://cobaltinfx.com/",
+  "author": {
+    "@type": "Organization",
+    "name": "Cobalt InFX",
+    "url": "https://cobaltinfx.com/"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Free",
+      "price": "0",
+      "priceCurrency": "GBP",
+      "description": "Unlimited transcriptions with Small and Base models, full editing, speaker tags, and export"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro",
+      "price": "7.99",
+      "priceCurrency": "GBP",
+      "billingIncrement": "P1M",
+      "description": "Advanced models, AI summaries, overlap resolution, custom vocabulary, bulk export"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro+",
+      "price": "12.99",
+      "priceCurrency": "GBP",
+      "billingIncrement": "P1M",
+      "description": "Everything in Pro plus speaker recognition across recordings, auto-label propagation"
+    }
+  ],
+  "featureList": [
+    "On-device transcription in 60+ languages",
+    "Automatic speaker detection and tagging",
+    "AI-powered structured summaries",
+    "Overlap detection and resolution",
+    "Audio enhancement and noise removal",
+    "Export as TXT, Markdown, HTML, SRT",
+    "100% private — no cloud processing"
+  ]
+}
+</script>
 
 <!-- Open Graph (Facebook, LinkedIn, etc.) -->
 <meta property="og:title" content="Vox Dictum — Private AI Transcription for macOS">
@@ -666,17 +718,17 @@
       <div class="feature-card">
         <span class="fc-icon">📝</span>
         <h3>AI Powered Summary</h3>
-        <p>Generate structured summaries with key decisions, action items, and speaker contributions. On-device AI — no cloud, no data sharing.</p>
+        <p>Generate structured summaries tailored to meetings, interviews, podcasts, and more — with key decisions, action items, and speaker contributions. On-device AI — no cloud, no data sharing.</p>
       </div>
       <div class="feature-card">
         <span class="fc-icon">🔇</span>
         <h3>Audio Enhancement</h3>
-        <p>Built-in speech enhancement, spectral noise gate, and voice activity detection. Better input, better output.</p>
+        <p>Built-in speech enhancement, background noise removal, and silence removal. Better input, better output.</p>
       </div>
       <div class="feature-card">
         <span class="fc-icon">📤</span>
         <h3>Flexible Export</h3>
-        <p>Export as TXT, Markdown, or SRT subtitles — all with speaker names. Ready for your workflow.</p>
+        <p>Export as TXT, Markdown, HTML, or SRT subtitles — all with speaker names. Ready for your workflow.</p>
       </div>
       <div class="feature-card">
         <span class="fc-icon">🛡️</span>
@@ -770,12 +822,12 @@
         <div class="tier-note">No credit card required</div>
         <ul>
           <li>Unlimited transcriptions</li>
-          <li>Standard transcription model</li>
+          <li>Small and Base transcription models</li>
           <li>Speaker diarisation and renaming</li>
           <li>Transcription in 60+ languages</li>
           <li>Audio enhancement suite</li>
-          <li>Export as TXT, MD, SRT</li>
-          <li>Suggested Settings advisor</li>
+          <li>Export as TXT, MD, HTML, SRT</li>
+          <li>Audio Advisor</li>
           <li>URL and podcast import</li>
         </ul>
       </div>
@@ -791,6 +843,7 @@
           <li>Custom vocabulary corrections</li>
           <li>Speaker reallocation</li>
           <li>Transcript phrase splitting</li>
+          <li>Bulk transcript export</li>
         </ul>
       </div>
       <div class="tier-card">
