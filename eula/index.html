@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>End User Licence Agreement — Vox Dictum | Cobalt InFX</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="End User Licence Agreement for Vox Dictum, the private on-device transcription app for macOS by Cobalt InFX.">
+<meta name="author" content="Cobalt InFX">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://cobaltinfx.com/eula">
+
+<!-- Open Graph -->
+<meta property="og:title" content="EULA — Vox Dictum | Cobalt InFX">
+<meta property="og:description" content="End User Licence Agreement for Vox Dictum, the private on-device transcription app for macOS.">
+<meta property="og:url" content="https://cobaltinfx.com/eula">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cobalt InFX">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="EULA — Vox Dictum | Cobalt InFX">
+<meta name="twitter:description" content="End User Licence Agreement for Vox Dictum, the private on-device transcription app for macOS.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="VoxDictum1024.png">
+<link rel="apple-touch-icon" href="VoxDictum1024.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface-hover: #1a1a26;
+    --border: #1e1e2e;
+    --text: #e8e6e3;
+    --text-secondary: #8a8898;
+    --accent: #7c5bf5;
+    --accent-glow: rgba(124, 91, 245, 0.15);
+    --warm: #c9a87c;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 16px 0;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  nav .inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav .logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  nav .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  nav .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    transition: color 0.2s;
+    letter-spacing: 0.3px;
+  }
+
+  nav .nav-links a:hover { color: var(--text); }
+
+  /* ─── CONTENT ─── */
+  .content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 120px 32px 80px;
+  }
+
+  .page-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .page-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+  }
+
+  .intro-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 40px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  .intro-box strong { color: var(--text); font-weight: 500; }
+  .intro-box a { color: var(--accent); text-decoration: none; }
+  .intro-box a:hover { text-decoration: underline; }
+
+  h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 48px;
+    margin-bottom: 14px;
+    color: var(--text);
+  }
+
+  p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+    line-height: 1.8;
+  }
+
+  ul {
+    margin: 0 0 14px 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  ul li { margin-bottom: 6px; }
+
+  .legal-caps {
+    font-size: 12px;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    opacity: 0.8;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 40px 0;
+  }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 32px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+
+  .footer-links {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--text); }
+
+  @media (max-width: 600px) {
+    .page-title { font-size: 28px; }
+    .content { padding: 100px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a href="https://cobaltinfx.com" class="logo">COBALT INFX</a>
+    <div class="nav-links">
+      <a href="https://cobaltinfx.com/#products">Products</a>
+      <a href="https://cobaltinfx.com/privacy">Privacy</a>
+      <a href="https://cobaltinfx.com/#support">Support</a>
+    </div>
+  </div>
+</nav>
+
+<div class="content">
+
+  <div class="page-label">Legal</div>
+  <div class="page-title">End User Licence Agreement</div>
+  <p class="page-subtitle">Effective Date: May 2026 · Last Updated: May 2026</p>
+
+  <div class="intro-box">
+    This End User Licence Agreement ("Agreement") is a legal agreement between you ("User", "you") and <strong>Cobalt InFX</strong> ("Licensor", "we", "us", "our") for the use of the Vox Dictum application and related software ("Software").<br><br>
+    By downloading, installing, or using the Software, you agree to be bound by this Agreement. If you do not agree, do not install or use the Software.<br><br>
+    This Agreement supplements the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Standard End User Licence Agreement</a> ("Apple EULA"). Where required by Apple, the Apple EULA shall apply. In the event of a conflict, the applicable provision shall be interpreted to give effect to both agreements where possible.
+  </div>
+
+  <hr class="divider">
+
+  <h2>1. Licence Grant</h2>
+  <p>We grant you a limited, non-exclusive, non-transferable, revocable licence to use the Software on Apple-branded devices that you own or control, in accordance with this Agreement and the Apple Media Services Terms and Conditions.</p>
+  <p>You may not:</p>
+  <ul>
+    <li>Copy, modify, or distribute the Software</li>
+    <li>Reverse engineer, decompile, or attempt to extract source code, except where permitted by law</li>
+    <li>Rent, lease, lend, sell, or sublicense the Software</li>
+  </ul>
+  <p>All rights not expressly granted are reserved.</p>
+
+  <hr class="divider">
+
+  <h2>2. Ownership and Intellectual Property</h2>
+  <p>The Software, including all associated intellectual property rights, is owned by the Licensor or its licensors. This Agreement does not transfer ownership of the Software. You are granted only a licence to use it.</p>
+
+  <hr class="divider">
+
+  <h2>3. On-Device Processing</h2>
+  <p>The Software is designed so that transcription, speaker recognition, summarisation, and audio processing occur entirely on your device.</p>
+  <ul>
+    <li>No audio, transcripts, summaries, speaker data, or generated content are transmitted to the Licensor during processing</li>
+    <li>Limited network activity may occur for downloading AI models from third-party hosting services and Apple subscription validation</li>
+  </ul>
+
+  <hr class="divider">
+
+  <h2>4. Recording Consent and Lawful Use</h2>
+  <p>The Software processes audio and video recordings that you lawfully import into the Software. Laws governing the recording of conversations vary by jurisdiction. Some jurisdictions require the consent of all parties to a conversation before recording is lawful.</p>
+  <p>You are solely responsible for:</p>
+  <ul>
+    <li>Ensuring that you have the legal right to record, possess, and transcribe any audio or video file you import into or download using the Software</li>
+    <li>Obtaining all necessary consents from any individuals whose voices appear in recordings you process</li>
+    <li>Complying with all applicable laws and regulations governing the recording, transcription, and storage of conversations in your jurisdiction, including but not limited to wiretapping laws, data protection laws, and privacy regulations</li>
+  </ul>
+  <p>The Licensor has no knowledge of, access to, or control over the recordings you process. The Licensor accepts no responsibility or liability for unlawful recording, importation, or transcription of audio or video content.</p>
+  <p>The Software does not provide functionality to intercept communications, bypass operating system protections, or secretly record calls or conversations.</p>
+
+  <hr class="divider">
+
+  <h2>5. Speaker Recognition and Voice Processing</h2>
+  <p>The Software uses machine learning models to identify and distinguish speakers in recordings. This processing analyses voice characteristics including pitch, timbre, and speaking patterns.</p>
+  <p>In certain jurisdictions, the processing of voice characteristics may constitute biometric data processing subject to specific legal requirements.</p>
+  <p>You acknowledge that:</p>
+  <ul>
+    <li>Speaker recognition is performed entirely on your device. No voice data is transmitted to the Licensor</li>
+    <li>In the current version of the Software, voice embeddings used for speaker identification are transient and are discarded when the processing job completes. No persistent voice profiles are stored</li>
+    <li>You are responsible for informing any third parties whose voices are processed by the Software, and for obtaining consent, where required by applicable law</li>
+  </ul>
+  <p>If future versions of the Software introduce persistent voice profiles, explicit consent will be required before any voice data is stored.</p>
+
+  <hr class="divider">
+
+  <h2>6. AI-Generated Content Disclaimer</h2>
+  <p>The Software generates transcriptions, summaries, key decisions, action items, speaker attributions, and other text output using on-device AI models.</p>
+  <p>You acknowledge that:</p>
+  <ul>
+    <li>AI-generated output may contain errors, omissions, inaccuracies, or misattributions</li>
+    <li>Transcriptions are not guaranteed to be verbatim records. Word error rates vary depending on audio quality, background noise, accent, language, number of speakers, and the transcription model selected</li>
+    <li>Summaries, key decisions, action items, and speaker attributions are machine-generated interpretations of the transcript. They may not accurately reflect what was said or who said it</li>
+  </ul>
+  <p>AI-generated content must not be relied upon as legal records, certified transcripts, professional or medical advice, or a verbatim or legally authoritative record without independent verification.</p>
+  <p>The Licensor accepts no liability for any decisions made, actions taken, or consequences arising from reliance on AI-generated output. Use of such output is at your own risk.</p>
+
+  <hr class="divider">
+
+  <h2>7. Data Responsibility</h2>
+  <p>All data processed by the Software remains on your device. The Licensor has no access to your recordings, transcripts, summaries, speaker data, or any other content processed by the Software.</p>
+  <p>You are solely responsible for:</p>
+  <ul>
+    <li>The security of your device and the data stored on it</li>
+    <li>Backing up your transcripts and recordings</li>
+    <li>The storage, sharing, and distribution of any files exported from the Software, including TXT, Markdown, and SRT files containing transcript content and speaker names</li>
+    <li>Any consequences arising from the loss, theft, or unauthorised access to your device or exported files</li>
+  </ul>
+  <p>The Licensor cannot access, recover, retrieve, or restore any data processed or stored by the Software.</p>
+
+  <hr class="divider">
+
+  <h2>8. Model Downloads and Third-Party Services</h2>
+  <p>The Software downloads AI models from third-party hosting services for transcription and summarisation. These downloads require an internet connection. After downloading, all features operate offline.</p>
+  <p>The Licensor does not control the availability, integrity, or continued hosting of third-party model files and is not responsible for interruptions, failures, or changes caused by third-party hosting services.</p>
+
+  <hr class="divider">
+
+  <h2>9. Subscriptions and Payments</h2>
+  <p>Optional subscription tiers (Pro and Pro+) are provided via Apple's App Store using StoreKit.</p>
+  <ul>
+    <li>Subscription billing, renewal, cancellation, and refunds are managed entirely by Apple and are subject to Apple's terms and conditions</li>
+    <li>You must contact Apple for billing issues or refund requests</li>
+    <li>The Licensor does not process any payment information</li>
+  </ul>
+
+  <hr class="divider">
+
+  <h2>10. Acceptable Use</h2>
+  <p>You agree not to use the Software for any unlawful purpose, to process recordings obtained without appropriate legal authority or consent, or in a manner that infringes the rights of any third party.</p>
+
+  <hr class="divider">
+
+  <h2>11. Disclaimer of Warranties</h2>
+  <p class="legal-caps">THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, OR STATUTORY. TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE LICENSOR DISCLAIMS ALL WARRANTIES INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, TITLE, AND NON-INFRINGEMENT.</p>
+  <p class="legal-caps">THE LICENSOR DOES NOT WARRANT THAT: (a) THE SOFTWARE WILL BE ERROR-FREE, UNINTERRUPTED, OR SECURE; (b) TRANSCRIPTIONS WILL BE ACCURATE OR COMPLETE; (c) SPEAKER IDENTIFICATION WILL BE CORRECT; (d) AI-GENERATED SUMMARIES WILL ACCURATELY REFLECT THE CONTENT OF RECORDINGS; (e) THE SOFTWARE WILL BE COMPATIBLE WITH FUTURE VERSIONS OF MACOS.</p>
+
+  <hr class="divider">
+
+  <h2>12. Limitation of Liability</h2>
+  <p class="legal-caps">TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF DATA, LOSS OF PROFITS, LOSS OF BUSINESS, OR REPUTATIONAL HARM, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE SOFTWARE.</p>
+  <p class="legal-caps">THE LICENSOR'S TOTAL AGGREGATE LIABILITY ARISING OUT OF OR IN CONNECTION WITH THIS AGREEMENT SHALL NOT EXCEED THE TOTAL AMOUNT PAID BY YOU FOR THE SOFTWARE IN THE TWELVE (12) MONTHS PRECEDING THE EVENT GIVING RISE TO THE CLAIM.</p>
+
+  <hr class="divider">
+
+  <h2>13. Consumer Rights</h2>
+  <p>Nothing in this Agreement excludes or limits any rights you have under applicable law that cannot be lawfully excluded, including your statutory rights as a consumer.</p>
+
+  <hr class="divider">
+
+  <h2>14. Indemnification</h2>
+  <p>You agree to indemnify, defend, and hold harmless the Licensor from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable legal fees) arising out of or in connection with your use of the Software, your breach of this Agreement, your violation of any applicable law, any content you process, store, export, or distribute using the Software, or any claim by a third party arising from the recording, transcription, or processing of their voice without appropriate consent.</p>
+
+  <hr class="divider">
+
+  <h2>15. Termination</h2>
+  <p>This Agreement remains in effect until terminated. We may terminate or suspend your licence if you breach this Agreement or for operational or legal reasons, where necessary. Upon termination, you must cease all use of the Software and delete all copies.</p>
+
+  <hr class="divider">
+
+  <h2>16. Changes to This Agreement</h2>
+  <p>We may update this Agreement from time to time. Updated versions will be posted at <a href="https://cobaltinfx.com/eula">cobaltinfx.com/eula</a>. Continued use of the Software after changes are posted constitutes acceptance of the updated terms.</p>
+
+  <hr class="divider">
+
+  <h2>17. Governing Law</h2>
+  <p>This Agreement shall be governed by and construed in accordance with the laws of England and Wales. Any dispute arising under this Agreement shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+  <hr class="divider">
+
+  <h2>18. Eligibility</h2>
+  <p>You must meet the minimum age required under the laws of your jurisdiction to enter into a binding agreement and to use the Software. If you are under the age of majority in your jurisdiction, you may use the Software only with the involvement and consent of a parent or legal guardian.</p>
+
+  <hr class="divider">
+
+  <h2>19. Privacy</h2>
+  <p>Your use of the Software is also governed by our <a href="https://cobaltinfx.com/privacy">Privacy Policy</a>.</p>
+
+  <hr class="divider">
+
+  <h2>20. Contact</h2>
+  <p><strong style="color:var(--text); font-weight:500;">Cobalt InFX</strong><br>
+  Email: <a href="mailto:support@cobaltinfx.com">support@cobaltinfx.com</a><br>
+  Website: <a href="https://cobaltinfx.com">cobaltinfx.com</a></p>
+
+  <hr class="divider">
+
+  <h2>21. Feedback</h2>
+  <p>If you provide suggestions, ideas, or other feedback regarding the Software ("Feedback"), you grant the Licensor a worldwide, non-exclusive, royalty-free, perpetual, irrevocable licence to use, reproduce, modify, and incorporate such Feedback into the Software or other products and services without obligation or compensation to you.</p>
+
+  <hr class="divider">
+
+  <h2>22. Severability</h2>
+  <p>If any provision of this Agreement is found to be invalid, illegal, or unenforceable by a court of competent jurisdiction, that provision shall be modified to the minimum extent necessary to make it valid, legal, and enforceable while preserving its original intent. If such modification is not possible, the provision shall be severed from this Agreement. The invalidity or unenforceability of any provision shall not affect the validity or enforceability of any other provision of this Agreement.</p>
+
+  <hr class="divider">
+
+  <h2>23. No Waiver</h2>
+  <p>The failure of the Licensor to enforce any right or provision of this Agreement shall not constitute a waiver of that right or provision. Any waiver of any provision of this Agreement will be effective only if in writing and signed by the Licensor.</p>
+
+  <hr class="divider">
+
+  <h2>24. No Partnership or Agency</h2>
+  <p>This Agreement does not create any agency, partnership, joint venture, or employment relationship between you and the Licensor. You have no authority to bind the Licensor or to make any representations on the Licensor's behalf.</p>
+
+  <hr class="divider">
+
+  <h2>25. Export Compliance</h2>
+  <p>The Software incorporates AI models and components that may be subject to export control laws and regulations. You agree not to download, use, or export the Software in violation of any applicable export control laws, including but not limited to restrictions administered by the UK, US, or EU authorities. You represent that you are not located in, or a national or resident of, any country subject to comprehensive trade sanctions.</p>
+
+  <hr class="divider">
+
+  <h2>26. Entire Agreement</h2>
+  <p>This Agreement, together with the <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple EULA</a> and our <a href="https://cobaltinfx.com/privacy">Privacy Policy</a>, constitutes the entire agreement between you and the Licensor regarding the Software.</p>
+
+</div>
+
+<footer>
+  <p>© 2026 Cobalt InFX Ltd. All rights reserved. London, United Kingdom.</p>
+  <div class="footer-links">
+    <a href="https://cobaltinfx.com/#products">Products</a>
+    <a href="https://cobaltinfx.com/privacy">Privacy Policy</a>
+    <a href="https://cobaltinfx.com/eula">EULA</a>
+    <a href="https://cobaltinfx.com/#support">Support</a>
+  </div>
+</footer>
+
+</body>
+</html>
