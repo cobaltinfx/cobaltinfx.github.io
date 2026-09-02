@@ -9,6 +9,10 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://cobaltinfx.com/privacy/voxdictum</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://cobaltinfx.com/eula</loc>
     <priority>0.5</priority>
   </url>

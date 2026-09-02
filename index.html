@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vox Dictum — Private AI Transcription for macOS | Cobalt InFX</title>
+<title>Cobalt InFX — Vox Dictum for macOS · ChargeSort for iPhone</title>
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="Vox Dictum is a private, on-device transcription app for macOS. Transcribe recordings, tag speakers, and generate AI summaries — 100% on your Mac. No cloud. No data collection.">
+<meta name="description" content="Cobalt InFX builds privacy-first apps: Vox Dictum, on-device transcription for macOS, and ChargeSort, honest EV charging costs for UK drivers. No accounts. No tracking.">
 <meta name="keywords" content="transcription, macOS, on-device, private, AI summary, speaker recognition, meeting transcription, Apple Silicon, speech to text, subtitles">
 <meta name="author" content="Cobalt InFX">
 <meta name="robots" content="index, follow">
@@ -509,6 +509,11 @@
     font-size: 11px;
   }
 
+  /* Two-column feature list (single wide card) */
+  .tier-card ul.two-col { column-count: 2; column-gap: 40px; }
+  .tier-card ul.two-col li { break-inside: avoid; -webkit-column-break-inside: avoid; }
+  @media (max-width: 600px) { .tier-card ul.two-col { column-count: 1; } }
+
   /* ─── PRIVACY ─── */
   .privacy { padding-top: 60px; padding-bottom: 60px; }
 
@@ -651,6 +656,30 @@
     nav .nav-links a { font-size: 11px; }
     .privacy-content { padding: 20px; }
   }
+
+  /* — MOCKUP ONLY: marks values Ozair still needs to supply — */
+  .tbc {
+    border: 1px dashed var(--warm);
+    border-radius: 6px;
+    padding: 1px 7px;
+    color: var(--warm);
+    font-size: 0.85em;
+    font-family: 'Outfit', sans-serif;
+    white-space: nowrap;
+  }
+  .product-nav {
+    display: flex; gap: 10px; justify-content: center;
+    flex-wrap: wrap; margin-bottom: 8px;
+  }
+  .product-nav a {
+    font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 500;
+    letter-spacing: 0.5px; text-decoration: none; color: var(--text-secondary);
+    border: 1px solid var(--border); border-radius: 999px; padding: 7px 16px;
+    transition: all 0.2s ease;
+  }
+  .product-nav a:hover { color: var(--text); border-color: var(--accent); background: var(--surface-hover); }
+
+  h3[id] { scroll-margin-top: 90px; }
 </style>
 </head>
 <body>
@@ -661,7 +690,7 @@
     <a href="#" class="logo">COBALT <span>INFX</span></a>
     <ul class="nav-links">
       <li><a href="#products">Products</a></li>
-      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="/privacy">Privacy</a></li>
       <li><a href="#support">Support</a></li>
     </ul>
   </div>
@@ -671,7 +700,11 @@
 <section class="hero" id="home">
   <div class="company-name">Cobalt InFX</div>
   <h1>Innovative Software<br><em>Solutions</em></h1>
-  <p>We build intelligent, privacy-first software for professionals who demand precision and control. Every product runs on-device — your data stays yours.</p>
+  <p>We build intelligent, privacy-first software for people who want precision and control. No accounts, no tracking, no data collection — what you tell our apps stays on your device.</p>
+  <div class="product-nav" style="margin-top:36px;">
+    <a href="#products">Vox Dictum — macOS</a>
+    <a href="#chargesort">ChargeSort — iPhone</a>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════
@@ -866,48 +899,117 @@
 
 </section>
 
+
 <!-- ═══════════════════════════════════════════════════════════
-     PRIVACY POLICY
+     PRODUCTS — CHARGESORT
      ═══════════════════════════════════════════════════════════ -->
 
 <div class="section-divider"><hr></div>
 
-<section class="privacy" id="privacy">
-  <div class="section-label">Privacy Policy</div>
-  <div class="section-title">Your data stays on your device</div>
-  <div class="privacy-content">
-    <div class="privacy-highlight">
-      🔒 Cobalt InFX products collect no data. Recordings, transcripts, and summaries are processed entirely on your device and are never transmitted to any server.
+<section id="chargesort">
+
+  <!-- Product Header -->
+  <div class="product-header">
+    <div class="product-info">
+      <div class="product-badge">Product</div>
+      <h2>Charge<em>Sort</em></h2>
+      <p>Public charging, ranked by what a charge will actually cost you — and how long you will actually be there. Built for UK EV drivers.</p>
+      <div class="product-badges">
+        <div class="pbadge"><div class="pbadge-icon icon-lock">🔌</div> Nine UK networks</div>
+        <div class="pbadge"><div class="pbadge-icon icon-chip">🚗</div> Priced for your car</div>
+      </div>
     </div>
-
-    <h3>Vox Dictum — What we process</h3>
-    <p>Vox Dictum processes audio and video recordings to produce text transcripts, speaker labels, and AI-generated summaries. All processing is performed locally on your Mac using on-device machine learning models. No audio, text, or metadata is sent to Cobalt InFX, Apple, or any third party during processing.</p>
-
-    <h3>What we collect</h3>
-    <p>Nothing. Vox Dictum does not collect personal data, usage analytics, crash reports, telemetry, or any other information from your device. The app contains no analytics frameworks, no tracking pixels, and no third-party SDKs that collect data.</p>
-
-    <h3>Network activity</h3>
-    <p>The only network activity in Vox Dictum is: (1) downloading AI models on first use (~2 GB, one-time), (2) downloading additional transcription models when you select a new model size, and (3) Apple verifying your subscription status. No recording data, transcript content, or user-generated content is transmitted over the network at any time.</p>
-
-    <h3>Speaker recognition</h3>
-    <p>Speaker voice matching (Pro+ tier) uses on-device neural network inference to compare voice characteristics within a single processing session. Voice embeddings are computed transiently in memory and discarded when the processing job completes. No biometric data is stored persistently. No voice profiles are created or retained between sessions.</p>
-
-    <h3>Subscriptions</h3>
-    <p>Subscriptions are managed entirely by Apple through the App Store. Cobalt InFX does not process payments, store credit card information, or have access to your Apple ID credentials.</p>
-
-    <h3>Data storage</h3>
-    <p>Your transcripts, speaker names, vocabulary corrections, and summaries are stored locally in your Mac's Application Support directory within the app's sandbox. This data is included in Time Machine backups and is deleted when you uninstall the app. Cobalt InFX has no access to this data.</p>
-
-    <h3>Children's privacy</h3>
-    <p>Cobalt InFX products are not directed at children under 13. We do not knowingly collect any information from children.</p>
-
-    <h3>Changes to this policy</h3>
-    <p>If we update this policy, we will post the revised version on this page with an updated effective date.</p>
-
-    <p style="margin-top:20px; color:var(--text); font-weight:400;">Effective date: April 2026</p>
-    <p>Contact: support@cobaltinfx.com</p>
+    <div class="download-cta">
+      <img src="ChargeSort1024.png" alt="ChargeSort" style="width:80px; height:80px; border-radius:18px; box-shadow: 0 4px 20px rgba(201, 168, 124, 0.3);">
+      <p style="font-size:14px; color:var(--warm); font-weight:500; margin-top:12px; letter-spacing:0.5px;">
+        <span class="tbc">App Store link — to add at launch</span>
+      </p>
+      <p>iPhone · iOS 18 or later</p>
+    </div>
   </div>
+
+  <!-- Features -->
+  <div class="features">
+    <div class="feature-grid">
+      <div class="feature-card">
+        <span class="fc-icon">💷</span>
+        <h3>The energy price you will pay</h3>
+        <p>Headline pence-per-kWh is rarely the whole story. ChargeSort works out the cost of the charge you need — your car, your connector, your current battery level — including connection and overstay fees where operators charge them.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">⏱️</span>
+        <h3>How long you will really be there</h3>
+        <p>A 150 kW charger does not give every car 150 kW. Time is estimated from your car's own charging curve and the battery level you are starting from, so a cheap charger that takes an hour longer does not look like a bargain.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">🗺️</span>
+        <h3>Availability</h3>
+        <p>See which bays are free, in use, or out of service — every reading carries the time it was last seen. We refresh status roughly every 12 minutes, so we show you the age of the data rather than calling it live.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">🏠</span>
+        <h3>Home is a charging option too</h3>
+        <p>Enter your home tariff and ChargeSort compares public charging against charging at home — including the cheap overnight window on a time-of-use tariff, or a single flat rate if you use a communal or workplace charger.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">💳</span>
+        <h3>Is a membership worth it?</h3>
+        <p>Subscriptions and memberships pay off at some mileages and not others. ChargeSort shows the break-even maths for how you actually charge, across operators, and leaves the decision to you.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">🎯</span>
+        <h3>It says when it does not know</h3>
+        <p>Where an operator does not publish a rate, ChargeSort shows the price as unknown rather than guessing. Estimated figures are labelled as estimates. Nothing is dressed up as more certain than it is.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">🧭</span>
+        <h3>Plan a journey, not just a stop</h3>
+        <p>Set a destination and ChargeSort works out where to charge along the way, matched to your car and the range you want to keep — free for everyone. With Plus it picks those stops for cost-effective charging across all networks, applying any memberships you hold.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">📈</span>
+        <h3>See what you spent — and saved</h3>
+        <p>Charge at a recommendation, confirm it, and ChargeSort keeps a running history of your spend and the savings against the pricier options — all on your phone, never uploaded.</p>
+      </div>
+      <div class="feature-card">
+        <span class="fc-icon">🔍</span>
+        <h3>Filter the map to what you can use</h3>
+        <p>Browse chargers on the map, filtered by operator and power and priced for your car. Zoom out and the counts still match your filters; on Plus you choose whether pins show the cheapest, fastest or best-value price.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features & pricing -->
+  <div class="tiers" id="chargesort-pricing">
+    <div class="section-label">Features &amp; pricing</div>
+    <div class="section-title">Everything ChargeSort does for your car.</div>
+    <div class="tier-grid" style="grid-template-columns: 1fr; max-width: 720px; margin: 0 auto;">
+      <div class="tier-card">
+        <div class="tier-name">ChargeSort</div>
+        <div class="tier-price">Feature list</div>
+        <div class="tier-note">Pricing and plans at launch</div>
+        <ul class="two-col">
+          <li>Chargers ranked by cost for your car model</li>
+          <li>Cheapest, Fastest &amp; Best-value options</li>
+          <li>Nine of the UK's major charging networks</li>
+          <li>Full ranked list of chargers</li>
+          <li>Map with up-to-date availability</li>
+          <li>Car-aware details on chargers</li>
+          <li>Reminders for the cheapest charging window</li>
+          <li>Is a membership worth it?</li>
+          <li>No ads</li>
+          <li>Your details are never paywalled</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tier-note" style="text-align:center; margin-top:28px;">
+      Your car, your home tariff and your charging history are never paywalled.
+    </div>
+  </div>
+
 </section>
+
+<div class="section-divider"><hr></div>
 
 <!-- ═══════════════════════════════════════════════════════════
      SUPPORT
@@ -920,7 +1022,7 @@
 
     <div class="support-card">
       <h3>Before contacting us</h3>
-      <p>Check the built-in Help section in Vox Dictum: Settings → Help. Most common questions are answered there.</p>
+      <p>Both apps have Help built in — Vox Dictum: Settings → Help. ChargeSort: Settings → Help &amp; About. Most common questions are answered there.</p>
 
       <h3>Common topics</h3>
       <p>Model downloads require a stable internet connection (~2–7 GB depending on features used). Transcription with advanced models may take longer than the recording duration — this is normal for on-device processing.</p>
@@ -930,6 +1032,15 @@
       <div class="contact-row"><strong>Chip</strong> Apple Silicon (M1 or later)</div>
       <div class="contact-row"><strong>RAM</strong> 8 GB minimum, 16 GB recommended</div>
       <div class="contact-row"><strong>Storage</strong> ~4–7 GB for AI models (downloaded on first use)</div>
+
+      <h3>ChargeSort system requirements</h3>
+      <div class="contact-row"><strong>iOS</strong> 18 or later</div>
+      <div class="contact-row"><strong>Device</strong> iPhone</div>
+      <div class="contact-row"><strong>Coverage</strong> United Kingdom</div>
+      <div class="contact-row"><strong>Account</strong> None required</div>
+
+      <h3>ChargeSort — common questions</h3>
+      <p>Availability comes from operator feeds refreshed periodically, not from a live stream, so every reading shows when it was last seen. Where a price shows as unknown, the operator does not publish a rate for that connector — the app will not guess one.</p>
     </div>
 
     <div class="support-card">
@@ -958,7 +1069,7 @@
   <p>© 2026 Cobalt InFX All rights reserved. London, United Kingdom.</p>
   <div class="footer-links">
     <a href="#products">Products</a>
-    <a href="#privacy">Privacy Policy</a>
+    <a href="/privacy">Privacy Policy</a>
     <a href="/eula">EULA</a>
     <a href="#support">Support</a>
   </div>
