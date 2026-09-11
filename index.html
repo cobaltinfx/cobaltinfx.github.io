@@ -680,6 +680,134 @@
   .product-nav a:hover { color: var(--text); border-color: var(--accent); background: var(--surface-hover); }
 
   h3[id] { scroll-margin-top: 90px; }
+
+  /* ═══════════════ ABOUT (home intro) ═══════════════ */
+  .about-hero {
+    padding-top: 168px;
+    padding-bottom: 8px;
+    max-width: 760px;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    position: relative;
+  }
+  .about-hero::before {
+    content: '';
+    position: absolute;
+    top: 90px;
+    left: 12%;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .about-hero .eyebrow {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 22px;
+  }
+  .about-hero h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(34px, 4.6vw, 50px);
+    font-weight: 400;
+    line-height: 1.18;
+    letter-spacing: -0.5px;
+    margin-bottom: 26px;
+  }
+  .about-hero h1 em { font-style: italic; color: var(--warm); }
+  .about-hero .standfirst {
+    font-size: 20px;
+    color: var(--text);
+    line-height: 1.75;
+    max-width: 60ch;
+  }
+
+  /* HUB CARDS */
+  .hub { max-width: 760px; margin: 0 auto; padding: 36px 32px 8px; }
+  .hub-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .hub-card {
+    display: block;
+    text-decoration: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px 24px;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  }
+  .hub-card:hover { border-color: var(--accent); background: var(--surface-hover); transform: translateY(-2px); }
+  .hub-card .hc-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .hub-card h3 { font-family: 'Instrument Serif', serif; font-size: 24px; font-weight: 400; color: var(--text); margin-bottom: 8px; letter-spacing: -0.2px; }
+  .hub-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px; }
+  .hub-card .hc-go { font-size: 13px; font-weight: 500; color: var(--warm); transition: color 0.2s; }
+  .hub-card:hover .hc-go { color: var(--accent); }
+
+  /* ABOUT BODY */
+  .body { max-width: 760px; margin: 0 auto; padding: 40px 32px 40px; }
+  .body p { font-size: 18px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 28px; max-width: 68ch; }
+  .body p strong { color: var(--text); font-weight: 500; }
+  .body .turn { font-family: 'Instrument Serif', serif; font-size: 26px; font-weight: 400; color: var(--text); line-height: 1.35; margin: 44px 0 22px; letter-spacing: -0.2px; }
+  .body .turn em { font-style: italic; color: var(--warm); }
+
+  /* STANDS-FOR / WON'T-DO */
+  .stance { max-width: 760px; margin: 0 auto; padding: 8px 32px 24px; }
+  .stance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stance-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 26px; }
+  .stance-card.will { border-top: 2px solid rgba(124, 91, 245, 0.4); }
+  .stance-card.wont { border-top: 2px solid rgba(201, 168, 124, 0.4); }
+  .stance-card h3 { font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; margin-bottom: 16px; }
+  .stance-card ul { list-style: none; padding: 0; }
+  .stance-card li { font-size: 14px; color: var(--text-secondary); line-height: 1.6; padding: 8px 0 8px 20px; position: relative; }
+  .stance-card.will li::before { content: '+'; position: absolute; left: 0; top: 8px; color: var(--accent); font-weight: 600; }
+  .stance-card.wont li::before { content: '–'; position: absolute; left: 0; top: 8px; color: var(--warm); font-weight: 600; }
+
+  hr.rule { border: none; border-top: 1px solid var(--border); margin: 8px 0 0; }
+  .rule-wrap { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+  /* FACTS strip */
+  .facts { max-width: 760px; margin: 0 auto; padding: 40px 32px 8px; }
+  .facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .fact { background: var(--bg); padding: 24px 22px; }
+  .fact .k { font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .fact .v { font-size: 15px; color: var(--text); line-height: 1.55; }
+  .fact .v span { color: var(--text-secondary); }
+
+  /* FOUNDER */
+  .founder { max-width: 760px; margin: 0 auto; padding: 48px 32px 8px; }
+  .founder-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+  .founder-card { display: flex; gap: 26px; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 30px 28px; }
+  .founder-photo { flex-shrink: 0; width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); background: var(--surface-hover); }
+  .founder-body h3 { font-family: 'Instrument Serif', serif; font-size: 24px; font-weight: 400; letter-spacing: -0.2px; margin-bottom: 2px; }
+  .founder-body .role { font-size: 13px; color: var(--warm); margin-bottom: 14px; letter-spacing: 0.3px; }
+  .founder-body p { font-size: 15px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 14px; max-width: 56ch; }
+  .founder-body p:last-of-type { margin-bottom: 0; }
+  .founder-body p strong { color: var(--text); font-weight: 500; }
+  .founder-li-btn { display: inline-block; margin-top: 16px; padding: 11px 22px; border: 1px solid var(--border); border-radius: 8px; font-size: 13px; font-weight: 500; letter-spacing: 0.3px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s, border-color 0.2s, background 0.2s; }
+  .founder-li-btn:hover { color: var(--text); border-color: var(--accent); background: var(--surface-hover); }
+
+  /* ABOUT CLOSE */
+  .close { max-width: 760px; margin: 0 auto; padding: 48px 32px 8px; }
+  .close p { font-size: 18px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 30px; max-width: 64ch; }
+  .close p strong { color: var(--text); font-weight: 500; }
+  .close .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .close a.btn { display: inline-block; padding: 12px 24px; border-radius: 8px; font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 500; text-decoration: none; letter-spacing: 0.3px; transition: all 0.2s ease; }
+  .close a.btn-primary { background: var(--accent); color: #fff; }
+  .close a.btn-primary:hover { background: var(--accent-soft); }
+  .close a.btn-ghost { color: var(--text-secondary); border: 1px solid var(--border); }
+  .close a.btn-ghost:hover { color: var(--text); border-color: var(--accent); background: var(--surface-hover); }
+
+  @media (max-width: 768px) {
+    .body p, .close p { font-size: 17px; }
+    .about-hero .standfirst { font-size: 18px; }
+    .stance-grid { grid-template-columns: 1fr; }
+    .facts-grid { grid-template-columns: 1fr; }
+    .founder-card { flex-direction: column; gap: 18px; align-items: center; text-align: center; }
+    .founder-body p { text-align: left; }
+  }
 </style>
 </head>
 <body>
@@ -687,8 +815,9 @@
 <!-- ─── NAV ─── -->
 <nav>
   <div class="inner">
-    <a href="#" class="logo">COBALT <span>INFX</span></a>
+    <a href="#home" class="logo">COBALT <span>INFX</span></a>
     <ul class="nav-links">
+      <li><a href="#home">About</a></li>
       <li><a href="#products">Products</a></li>
       <li><a href="/privacy">Privacy</a></li>
       <li><a href="#support">Support</a></li>
@@ -696,14 +825,110 @@
   </div>
 </nav>
 
-<!-- ─── HERO — COBALT INFX ─── -->
-<section class="hero" id="home">
-  <div class="company-name">Cobalt InFX</div>
-  <h1>Innovative Software<br><em>Solutions</em></h1>
-  <p>We build intelligent, privacy-first software for people who want precision and control. No accounts, no tracking, no data collection — what you tell our apps stays on your device.</p>
-  <div class="product-nav" style="margin-top:36px;">
-    <a href="#products">Vox Dictum — macOS</a>
-    <a href="#chargesort">ChargeSort — iPhone</a>
+<!-- ─── ABOUT — HERO ─── -->
+<div class="about-hero" id="home">
+  <div class="eyebrow">About</div>
+  <h1>A software studio with a <em>point of view</em>.</h1>
+  <p class="standfirst">Cobalt InFX builds intelligent, privacy-first software for people who want precision and control — tools that do serious reasoning on your own device, and never ask you to trade your data for the privilege.</p>
+</div>
+
+<!-- HUB CARDS -->
+<section class="hub">
+  <div class="hub-grid">
+    <a class="hub-card" href="/thinking">
+      <div class="hc-eyebrow">Read next</div>
+      <h3>The thinking</h3>
+      <p>The longer argument for why the apps are private, cautious, and built to help you decide.</p>
+      <span class="hc-go">Read the essay →</span>
+    </a>
+    <a class="hub-card" href="/writing">
+      <div class="hc-eyebrow">Read next</div>
+      <h3>Writing</h3>
+      <p>Essays on data quality, governance, and decision-making in the age of AI — the ideas underneath the apps.</p>
+      <span class="hc-go">Browse the writing →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT — BODY -->
+<article class="body">
+  <p>We are a small studio by design. Small enough to answer to no one but the people who use what we make; deliberate enough to hold every product to a single standard — <strong>does this genuinely help someone decide, and can they trust it completely?</strong> If the answer to either half is no, it doesn't ship.</p>
+
+  <p>That standard is not a slogan. It comes from years spent building the kind of data systems that organisations bet real money on — where a number that couldn't be trusted was worse than no number at all. <strong>We build consumer software to that same bar</strong>, and see no reason a person should expect less rigour than a boardroom does.</p>
+
+  <p class="turn">What we're really doing is <em>moving good judgement closer to you.</em></p>
+
+  <p>The intelligence that used to live inside large, private systems — the reasoning that turns messy inputs into a decision you can act on — no longer needs a data centre or a login. It can run on the device already in your hand. Cobalt InFX exists to put that capability where it belongs: <strong>with the individual, working privately, entirely under their own control.</strong></p>
+</article>
+
+<!-- WHAT WE STAND FOR / WON'T DO -->
+<section class="stance">
+  <div class="stance-grid">
+    <div class="stance-card will">
+      <h3>What we build for</h3>
+      <ul>
+        <li>Reasoning that earns its answer, not features that fill a list</li>
+        <li>Everything processed on your own device, by default</li>
+        <li>Candour about uncertainty — estimates and unknowns shown as they are</li>
+        <li>Decisions handed to you, ready to act on</li>
+        <li>Precision and control, kept firmly in your hands</li>
+      </ul>
+    </div>
+    <div class="stance-card wont">
+      <h3>What we won't do</h3>
+      <ul>
+        <li>Collect, sell, or quietly upload your data</li>
+        <li>Treat your attention as something to capture</li>
+        <li>Dress up a guess as a confident answer</li>
+        <li>Lock the essentials behind a paywall</li>
+        <li>Track you, anywhere, for any reason</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FACTS -->
+<section class="facts">
+  <div class="facts-grid">
+    <div class="fact">
+      <div class="k">Discipline</div>
+      <div class="v">Privacy-first, on-device software <span>— intelligent tools that stay yours</span></div>
+    </div>
+    <div class="fact">
+      <div class="k">Products</div>
+      <div class="v">Vox Dictum for macOS <span>· ChargeSort for iPhone</span></div>
+    </div>
+    <div class="fact">
+      <div class="k">Based in</div>
+      <div class="v">London, United Kingdom <span>· built for a global audience</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder">
+  <div class="founder-label">The founder</div>
+  <div class="founder-card">
+    <img class="founder-photo" src="/founder.jpg" alt="M. Ozair Rasheed, founder of Cobalt InFX">
+    <div class="founder-body">
+      <h3>M. Ozair Rasheed</h3>
+      <div class="role">Founder, Cobalt InFX</div>
+      <p>Cobalt InFX was founded by M. Ozair Rasheed, a data and AI transformation leader with more than two decades delivering large-scale technology programmes across the UK, Europe, the Middle East and South Asia — building systems that learn from data, anticipate what comes next, and turn it into decisions people can act on, in settings where a wrong answer carried real financial and operational consequences.</p>
+      <p>That background is the reason the apps are built the way they are: <strong>decision-first, candid about uncertainty, and private by default</strong>. The conviction that people should keep control of the systems they rely on didn't come from a mission statement — it came from watching what happens when they don't.</p>
+      <p>He also writes on data quality, governance, and decision-making in the age of AI.</p>
+    </div>
+  </div>
+  <a class="founder-li-btn" href="https://www.linkedin.com/in/mohammadozair/" target="_blank" rel="noopener">View full profile on LinkedIn →</a>
+</section>
+
+<div class="rule-wrap" style="margin-top:40px;"><hr class="rule"></div>
+
+<!-- ABOUT — CLOSE -->
+<section class="close">
+  <p>The apps are the proof of all this — but if you want the reasoning behind them, <strong>read <a href="/thinking" style="color:var(--accent);text-decoration:none;">the thinking</a></strong> or browse the <strong><a href="/writing" style="color:var(--accent);text-decoration:none;">writing</a></strong>.</p>
+  <div class="cta-row">
+    <a href="#products" class="btn btn-primary">Explore the apps</a>
+    <a href="mailto:support@cobaltinfx.com?subject=Cobalt%20InFX%20enquiry" class="btn btn-ghost">Get in touch</a>
   </div>
 </section>
 
@@ -1068,7 +1293,10 @@
 <footer>
   <p>© 2026 Cobalt InFX All rights reserved. London, United Kingdom.</p>
   <div class="footer-links">
+    <a href="#home">About</a>
     <a href="#products">Products</a>
+    <a href="/thinking">The thinking</a>
+    <a href="/writing">Writing</a>
     <a href="/privacy">Privacy Policy</a>
     <a href="/eula">EULA</a>
     <a href="#support">Support</a>

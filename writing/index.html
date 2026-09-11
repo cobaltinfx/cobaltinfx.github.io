@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing — Cobalt InFX</title>
+  <meta name="description" content="Writing from Cobalt InFX on data quality, governance, and decision-making in the age of AI — the thinking that underpins the apps.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cobalt InFX">
+  <meta property="og:title" content="Writing — Cobalt InFX">
+  <meta property="og:description" content="On data quality, governance, and decision-making in the age of AI.">
+  <meta property="og:url" content="https://cobaltinfx.com/writing">
+  <meta property="og:image" content="https://cobaltinfx.com/VoxDictum1024.png">
+
+  <link rel="canonical" href="https://cobaltinfx.com/writing">
+  <link rel="icon" type="image/png" href="/VoxDictum1024.png">
+  <link rel="apple-touch-icon" href="/VoxDictum1024.png">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface-hover: #1a1a26;
+    --border: #1e1e2e;
+    --text: #e8e6e3;
+    --text-secondary: #8a8898;
+    --accent: #7c5bf5;
+    --accent-glow: rgba(124, 91, 245, 0.15);
+    --accent-soft: #6347c7;
+    --warm: #c9a87c;
+    --success: #4ade80;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 16px 0;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav .logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  nav .logo span { color: var(--accent); }
+  nav .nav-links { display: flex; gap: 28px; list-style: none; }
+  nav .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    transition: color 0.2s;
+    letter-spacing: 0.3px;
+  }
+  nav .nav-links a:hover { color: var(--text); }
+  nav .nav-links a.current { color: var(--text); }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding-top: 168px;
+    padding-bottom: 8px;
+    max-width: 760px;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 90px;
+    left: 12%;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .hero .eyebrow {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(34px, 4.6vw, 50px);
+    font-weight: 400;
+    line-height: 1.18;
+    letter-spacing: -0.5px;
+    margin-bottom: 26px;
+  }
+  .hero h1 em { font-style: italic; color: var(--warm); }
+  .hero .standfirst {
+    font-size: 19px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    max-width: 62ch;
+  }
+  .hero .standfirst strong { color: var(--text); font-weight: 400; }
+
+  /* ─── THEMES / LIST ─── */
+  .writing {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 32px 40px;
+  }
+  .theme { margin-bottom: 52px; }
+  .theme:last-child { margin-bottom: 0; }
+
+  .theme-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 6px;
+  }
+  .theme-head h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 27px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+  }
+  .theme-head h2 em { font-style: italic; color: var(--warm); }
+  .theme-note {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 64ch;
+  }
+
+  .article {
+    display: block;
+    text-decoration: none;
+    border-top: 1px solid var(--border);
+    padding: 18px 0;
+    transition: padding-left 0.2s ease;
+  }
+  .theme .article:last-child { border-bottom: 1px solid var(--border); }
+  .article:hover { padding-left: 8px; }
+  .article .a-title {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.4;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    transition: color 0.2s;
+  }
+  .article:hover .a-title { color: var(--accent); }
+  .article .a-arrow {
+    color: var(--text-secondary);
+    font-size: 13px;
+    flex-shrink: 0;
+    transition: color 0.2s, transform 0.2s;
+  }
+  .article:hover .a-arrow { color: var(--accent); }
+  .article .a-gloss {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: 6px;
+    max-width: 62ch;
+  }
+
+  hr.rule { border: none; border-top: 1px solid var(--border); margin: 8px 0 0; }
+  .rule-wrap { max-width: 760px; margin: 0 auto; padding: 0 32px; }
+
+  /* ─── CLOSE ─── */
+  .close { max-width: 760px; margin: 0 auto; padding: 48px 32px 96px; }
+  .close p {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 28px;
+    max-width: 64ch;
+  }
+  .close p strong { color: var(--text); font-weight: 500; }
+  .close p a { color: var(--accent); text-decoration: none; }
+  .close .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .close a.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: all 0.2s ease;
+  }
+  .close a.btn-primary { background: var(--accent); color: #fff; }
+  .close a.btn-primary:hover { background: var(--accent-soft); }
+  .close a.btn-ghost { color: var(--text-secondary); border: 1px solid var(--border); }
+  .close a.btn-ghost:hover { color: var(--text); border-color: var(--accent); background: var(--surface-hover); }
+
+  /* ─── FOOTER ─── */
+  footer { border-top: 1px solid var(--border); padding: 36px 32px; text-align: center; }
+  footer p { font-size: 11px; color: var(--text-secondary); max-width: 960px; margin: 0 auto; }
+  footer .footer-links { margin-top: 10px; }
+  footer .footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 11px;
+    margin: 0 10px;
+    transition: color 0.2s;
+  }
+  footer .footer-links a:hover { color: var(--text); }
+
+  @media (max-width: 768px) {
+    .hero .standfirst { font-size: 17px; }
+    .close p { font-size: 16px; }
+    .article .a-title { font-size: 16px; }
+    nav .nav-links { gap: 14px; }
+    nav .nav-links a { font-size: 11px; }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="inner">
+      <a href="/" class="logo">COBALT <span>INFX</span></a>
+      <ul class="nav-links">
+        <li><a href="/">About</a></li>
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/#support">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="eyebrow">Writing</div>
+    <h1>The ideas underneath the <em>apps</em>.</h1>
+    <p class="standfirst">Alongside building the apps, Cobalt InFX has been working out — in public — how organisations should treat data, trust, and decisions in the age of AI. <strong>These essays are where the convictions behind the apps get argued out in full.</strong></p>
+  </div>
+
+  <!-- WRITING -->
+  <div class="writing">
+
+    <!-- THEME 1 -->
+    <section class="theme">
+      <div class="theme-head">
+        <h2>Data quality as <em>foundation</em></h2>
+      </div>
+      <p class="theme-note">The unglamorous truth of AI: a model is only as trustworthy as the data beneath it. On why data quality is a strategic investment, not a clean-up task — and how to build organisations that actually deliver it.</p>
+
+      <a class="article" href="https://www.linkedin.com/pulse/data-quality-strategic-investment-enterprise-ai-m-ozair-rasheed-f8oje" target="_blank" rel="noopener">
+        <span class="a-title">Data Quality: A Strategic Investment for Enterprise AI <span class="a-arrow">Read ↗</span></span>
+        <span class="a-gloss">Citigroup has paid over $536 million in fines for data-quality failures; Unity Software lost $4.2 billion in market cap to dirty data. Yet most organisations still treat data quality as a technical afterthought rather than a strategic priority.</span>
+      </a>
+
+      <a class="article" href="https://www.linkedin.com/pulse/building-data-quality-organizations-actually-work-m-ozair-rasheed-a9aae" target="_blank" rel="noopener">
+        <span class="a-title">Building Data Quality Organizations That Actually Work <span class="a-arrow">Read ↗</span></span>
+        <span class="a-gloss">$180 billion spent on big-data tools, and poor data quality is still the biggest barrier to AI success. The difference between organisations that succeed and those that fail isn't the technology stack — it's the organisational structure.</span>
+      </a>
+
+      <a class="article" href="https://www.linkedin.com/pulse/operationalising-data-quality-ai-native-organisations-rasheed-8puwe" target="_blank" rel="noopener">
+        <span class="a-title">Operationalising Data Quality in AI-Native Organisations: Conceptual Frameworks for the Future <span class="a-arrow">Read ↗</span></span>
+        <span class="a-gloss">Structure decides who owns data quality; operations decide how it actually happens. A clear-eyed map of the shift from manual inspection to autonomous remediation — what works in production today, what's still aspirational, and why full autonomy is years away for most.</span>
+      </a>
+
+      <a class="article" href="https://www.linkedin.com/pulse/navigating-data-quality-tool-landscape-decision-ai-era-rasheed-jbjle" target="_blank" rel="noopener">
+        <span class="a-title">Navigating the Data Quality Tool Landscape: A Decision Framework for AI-Era Teams <span class="a-arrow">Read ↗</span></span>
+        <span class="a-gloss">Billions pour into data-quality platforms, yet the problem keeps getting worse. The issue isn't feature deficiency — it's tool-context mismatch. A framework for choosing by the problem you actually have, not the longest feature list.</span>
+      </a>
+    </section>
+
+    <!-- THEME 2 -->
+    <section class="theme">
+      <div class="theme-head">
+        <h2>Governance &amp; <em>trust</em></h2>
+      </div>
+      <p class="theme-note">AI can produce an answer; it cannot, on its own, make that answer trustworthy. On the human structures — governance, ownership, judgement — that turn capability into something an organisation can actually rely on.</p>
+
+      <a class="article" href="https://www.linkedin.com/pulse/governance-creates-trust-ai-alone-cannot-m-ozair-rasheed-kejre" target="_blank" rel="noopener">
+        <span class="a-title">Governance Creates Trust. AI Alone Cannot. <span class="a-arrow">Read ↗</span></span>
+        <span class="a-gloss">"We spent tens of millions on a data warehouse. Now AI answers any question in plain English — so what are we paying for?" The honest answer most advisors won't give: an AI that sounds certain while being wrong isn't a tool, it's a liability. Governance is what makes the difference.</span>
+      </a>
+
+      <a class="article" href="https://www.linkedin.com/pulse/project-manager-praetor-politician-priest-parent-m-ozair-rasheed-aavze" target="_blank" rel="noopener">
+        <span class="a-title">Project Manager: Praetor, Politician, Priest and Parent?! <span class="a-arrow">Read ↗</span></span>
+        <span class="a-gloss">Your programme has a methodology, a framework, certified people and RAG statuses — all the right ingredients on paper. And yet what decides whether it delivers has little to do with any of them. It's you, and which of four masks the moment demands.</span>
+      </a>
+    </section>
+
+    <!-- THEME 3 -->
+    <section class="theme">
+      <div class="theme-head">
+        <h2>Decisions &amp; <em>value</em></h2>
+      </div>
+      <p class="theme-note">The point of all of it is a better decision. On measuring what AI is really worth, and on the uncomfortable variable most models leave out — the human doing the deciding.</p>
+
+      <a class="article" href="https://www.linkedin.com/pulse/measuring-roi-age-ai-beyond-cost-mindset-m-ozair-rasheed-bnpse" target="_blank" rel="noopener">
+        <span class="a-title">Measuring ROI in the Age of AI: Beyond Cost Mindset <span class="a-arrow">Read ↗</span></span>
+        <span class="a-gloss">Traditional cost-benefit analysis asks "how much did we save?" The better question is "what became possible that wasn't before?" A three-dimensional way to value AI — by leverage, agility and capability — that cost-cutting maths systematically misses.</span>
+      </a>
+
+      <a class="article" href="https://www.linkedin.com/pulse/485-billion-framing-decision-when-humans-variable-m-ozair-rasheed-fxpxe" target="_blank" rel="noopener">
+        <span class="a-title">The £485 Billion Framing Decision: When Humans Are the Variable <span class="a-arrow">Read ↗</span></span>
+        <span class="a-gloss">89% of organisations have piloted generative AI but never scaled it. The barrier is rarely the technology — it's how leaders frame it. Between "cut costs" and "expand capability" lies £485 billion in one national economy, and the choice is set on day one.</span>
+      </a>
+    </section>
+
+  </div>
+
+  <div class="rule-wrap"><hr class="rule"></div>
+
+  <!-- CLOSE -->
+  <section class="close">
+    <p>The same ideas run straight through the products. If you want to see where they land, <strong><a href="/thinking">read the thinking</a></strong> or try the apps.</p>
+    <div class="cta-row">
+      <a href="/#products" class="btn btn-primary">Explore the apps</a>
+      <a href="/thinking" class="btn btn-ghost">Read the thinking</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Cobalt InFX All rights reserved. London, United Kingdom.</p>
+    <div class="footer-links">
+      <a href="/#products">Products</a>
+      <a href="/">About</a>
+      <a href="/thinking">The thinking</a>
+      <a href="/writing">Writing</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/eula">EULA</a>
+      <a href="/#support">Support</a>
+    </div>
+  </footer>
+
+</body>
+</html>

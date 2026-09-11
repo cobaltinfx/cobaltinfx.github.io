@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Thinking — Cobalt InFX</title>
+  <meta name="description" content="The thinking behind Cobalt InFX — decision-support intelligence, once locked inside enterprise systems, now private and personal on your own device.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cobalt InFX">
+  <meta property="og:title" content="The Thinking — Cobalt InFX">
+  <meta property="og:description" content="Decision-support intelligence, once locked inside enterprise systems, now private and personal on your own device.">
+  <meta property="og:url" content="https://cobaltinfx.com/thinking">
+  <meta property="og:image" content="https://cobaltinfx.com/VoxDictum1024.png">
+
+  <link rel="canonical" href="https://cobaltinfx.com/thinking">
+  <link rel="icon" type="image/png" href="/VoxDictum1024.png">
+  <link rel="apple-touch-icon" href="/VoxDictum1024.png">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+  :root {
+    --bg: #0a0a0f;
+    --surface: #12121a;
+    --surface-hover: #1a1a26;
+    --border: #1e1e2e;
+    --text: #e8e6e3;
+    --text-secondary: #8a8898;
+    --accent: #7c5bf5;
+    --accent-glow: rgba(124, 91, 245, 0.15);
+    --accent-soft: #6347c7;
+    --warm: #c9a87c;
+    --success: #4ade80;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 16px 0;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav .logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  nav .logo span { color: var(--accent); }
+  nav .nav-links { display: flex; gap: 28px; list-style: none; }
+  nav .nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    transition: color 0.2s;
+    letter-spacing: 0.3px;
+  }
+  nav .nav-links a:hover { color: var(--text); }
+  nav .nav-links a.current { color: var(--text); }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding-top: 168px;
+    padding-bottom: 8px;
+    max-width: 720px;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 90px;
+    left: 15%;
+    width: 460px;
+    height: 460px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .hero .eyebrow {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(34px, 4.6vw, 50px);
+    font-weight: 400;
+    line-height: 1.18;
+    letter-spacing: -0.5px;
+  }
+  .hero h1 em { font-style: italic; color: var(--warm); }
+
+  /* ─── ESSAY BODY ─── */
+  .essay {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 32px 70px;
+  }
+  .essay p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 28px;
+    max-width: 68ch;
+  }
+  .essay p.lead {
+    font-size: 20px;
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .essay p strong { color: var(--text); font-weight: 500; }
+
+  .essay .turn {
+    font-family: 'Instrument Serif', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.35;
+    margin: 48px 0 24px;
+    letter-spacing: -0.2px;
+  }
+  .essay .turn em { font-style: italic; color: var(--warm); }
+
+  .creed {
+    list-style: none;
+    margin: 4px 0 32px;
+    padding: 0;
+    border-left: 2px solid rgba(201, 168, 124, 0.35);
+  }
+  .creed li { padding: 0 0 20px 22px; max-width: 64ch; }
+  .creed li:last-child { padding-bottom: 0; }
+  .creed li b {
+    display: block;
+    font-family: 'Instrument Serif', serif;
+    font-size: 21px;
+    font-weight: 400;
+    color: var(--text);
+    letter-spacing: -0.2px;
+    margin-bottom: 4px;
+  }
+  .creed li span { font-size: 16px; color: var(--text-secondary); line-height: 1.75; }
+
+  hr.rule { border: none; border-top: 1px solid var(--border); margin: 8px 0 0; }
+  .rule-wrap { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+
+  /* ─── CLOSE ─── */
+  .close { max-width: 720px; margin: 0 auto; padding: 56px 32px 96px; }
+  .close p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 30px;
+    max-width: 64ch;
+  }
+  .close p strong { color: var(--text); font-weight: 500; }
+  .close .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .close a.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: all 0.2s ease;
+  }
+  .close a.btn-primary { background: var(--accent); color: #fff; }
+  .close a.btn-primary:hover { background: var(--accent-soft); }
+  .close a.btn-ghost { color: var(--text-secondary); border: 1px solid var(--border); }
+  .close a.btn-ghost:hover { color: var(--text); border-color: var(--accent); background: var(--surface-hover); }
+
+  /* ─── FOOTER ─── */
+  footer { border-top: 1px solid var(--border); padding: 36px 32px; text-align: center; }
+  footer p { font-size: 11px; color: var(--text-secondary); max-width: 960px; margin: 0 auto; }
+  footer .footer-links { margin-top: 10px; }
+  footer .footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 11px;
+    margin: 0 10px;
+    transition: color 0.2s;
+  }
+  footer .footer-links a:hover { color: var(--text); }
+
+  @media (max-width: 768px) {
+    .essay p, .close p { font-size: 17px; }
+    .essay p.lead { font-size: 18px; }
+    nav .nav-links { gap: 14px; }
+    nav .nav-links a { font-size: 11px; }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- NAV — existing links unchanged; "The thinking" added as current page -->
+  <nav>
+    <div class="inner">
+      <a href="/" class="logo">COBALT <span>INFX</span></a>
+      <ul class="nav-links">
+        <li><a href="/">About</a></li>
+        <li><a href="/#products">Products</a></li>
+        <li><a href="/privacy">Privacy</a></li>
+        <li><a href="/#support">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="eyebrow">The Thinking</div>
+    <h1>We would rather be useful than <em>impressive</em>.</h1>
+  </div>
+
+  <!-- ESSAY -->
+  <article class="essay">
+    <p class="lead">Most software is built to capture you — your attention, your data, your habit of coming back. Cobalt InFX builds for the opposite: to answer a hard question well and then get out of your way.</p>
+
+    <p>That sounds simple, and it isn't. A transcription app that keeps everything on your Mac is harder to build than one that ships your audio to a server. A charging app that tells you it doesn't know a price is harder to write than one that quietly makes a number up. Every principled choice costs something in effort. We think it's worth paying, because the alternative is asking you to trust software that has done nothing to earn it.</p>
+
+    <p>So the apps are shaped by a few convictions that don't bend.</p>
+
+    <ul class="creed">
+      <li>
+        <b>The point is a decision you can act on.</b>
+        <span>You don't want a wall of numbers or a raw transcript; you want to know which charger actually costs less for your car, or what a long meeting decided and what now lands on your desk. Good software does the hard part and hands you not just an answer but the action it points to.</span>
+      </li>
+      <li>
+        <b>What you tell an app should stay with you.</b>
+        <span>Processing happens on your own device. No accounts, no tracking, nothing uploaded in the background. Privacy here isn't a setting you switch on — it's the only way the apps are built.</span>
+      </li>
+      <li>
+        <b>An app should admit what it doesn't know.</b>
+        <span>An estimate is labelled an estimate. An unknown price is shown as unknown, not guessed. A confident wrong answer is the most expensive kind, and we would rather show you the edges of what we can tell you than paper over them.</span>
+      </li>
+    </ul>
+
+    <p class="turn">There is more going on here than a <em>tidy app.</em></p>
+
+    <p>Working out the true cost of a charge — your car, your battery level, the connector, the overstay fees, weighed against charging at home overnight — is not a lookup. It's a small piece of reasoning. Pulling the meaning out of a two-hour conversation is a harder one still. A transcript is just words on a page; the decision that was actually made, the commitment someone quietly gave, the action that now falls to a particular person — none of that is written down anywhere. It has to be inferred from how people spoke. For most of computing's history, that kind of work belonged to big systems: a dashboard on a server, fed by a data team, reached through a login, built for a boardroom rather than a person.</p>
+
+    <p>What has quietly changed is <strong>where that intelligence can live</strong>. The same class of reasoning that used to need a room full of infrastructure now runs on the phone in your pocket and the laptop on your desk — privately, without sending your life to someone else's computer to be understood. Cobalt InFX exists to take that shift seriously: to bring genuine decision-support down to a single person, and to keep it entirely theirs.</p>
+
+    <p class="turn">None of this is a marketing position. It's <em>a habit, earned the hard way.</em></p>
+
+    <p>Cobalt InFX is built on years of work at the demanding end of enterprise data — designing the systems that decide whether a bank's or an operator's numbers can be trusted, where a wrong answer is measured in real money and real consequences, across the UK, Europe, the Middle East and South Asia. That is the standard these apps are held to, now working for one person instead of a boardroom.</p>
+
+    <p>Two convictions run through all of it. The first is that <strong>a number nobody can trust is worse than no number at all</strong> — you decide better when you know where your certainty ends. The second is that <strong>the people using a system deserve to keep control of it</strong>, rather than be quietly managed by it. Those aren't app-store slogans; they're closer to what separates the systems that survive contact with the real world from the ones that don't.</p>
+
+    <p>The apps look modest — a transcription tool, a charging-cost tool. But they carry the same intent that once went into systems many times their size: do the hard reasoning properly, and leave the person in charge.</p>
+  </article>
+
+  <div class="rule-wrap"><hr class="rule"></div>
+
+  <!-- CLOSE -->
+  <section class="close">
+    <p>The clearest version of all this isn't an essay — it's the apps themselves. <strong>Have a look, and see whether they earn it.</strong></p>
+    <div class="cta-row">
+      <a href="/#products" class="btn btn-primary">Explore the apps</a>
+      <a href="mailto:support@cobaltinfx.com?subject=Cobalt%20InFX%20enquiry" class="btn btn-ghost">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Cobalt InFX All rights reserved. London, United Kingdom.</p>
+    <div class="footer-links">
+      <a href="/">About</a>
+      <a href="/thinking">The thinking</a>
+      <a href="/writing">Writing</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/eula">EULA</a>
+      <a href="/#support">Support</a>
+    </div>
+  </footer>
+
+</body>
+</html>
