@@ -103,7 +103,7 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; overflow-x: clip; }
 
   body {
     font-family: 'Outfit', sans-serif;
@@ -112,6 +112,8 @@
     line-height: 1.7;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   /* ─── NAV ─── */
@@ -395,7 +397,7 @@
   }
 
   /* ─── COMPARISON ─── */
-  .comparison { padding-bottom: 60px; }
+  .comparison { padding-bottom: 60px; overflow-x: auto; }
 
   .compare-table {
     width: 100%;
@@ -659,6 +661,10 @@
     nav .nav-links { gap: 14px; }
     nav .nav-links a { font-size: 11px; }
     .privacy-content { padding: 20px; }
+    /* Shrink the Vox Dictum comparison table to fit phone widths */
+    .compare-table { font-size: 10px; }
+    .compare-table th { padding: 7px 4px; font-size: 9px; }
+    .compare-table td { padding: 6px 4px; }
   }
 
   /* — MOCKUP ONLY: marks values Ozair still needs to supply — */
