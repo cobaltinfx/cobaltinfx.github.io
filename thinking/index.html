@@ -353,7 +353,7 @@
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
   data-cf-beacon='{"token": "7fc62ecf575c44ea8e2adcbc521daa36"}'></script>
 <script>
-(function(){var n=document.querySelector('nav');if(!n)return;var b=n.querySelector('.nav-toggle');if(!b)return;function set(o){b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Close menu':'Open menu');}b.addEventListener('click',function(){set(n.classList.toggle('open'));});n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');set(false);});});})();
+(function(){var n=document.querySelector('nav');if(!n)return;var b=n.querySelector('.nav-toggle');if(!b)return;function set(o){b.setAttribute('aria-expanded',o?'true':'false');b.setAttribute('aria-label',o?'Close menu':'Open menu');}b.addEventListener('click',function(e){e.stopPropagation();set(n.classList.toggle('open'));});n.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){n.classList.remove('open');set(false);});});document.addEventListener('click',function(e){if(n.classList.contains('open')&&!n.contains(e.target)){n.classList.remove('open');set(false);}});})();
 </script>
 </body>
 </html>
