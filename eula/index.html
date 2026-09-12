@@ -77,13 +77,16 @@
 
   nav .logo {
     font-family: 'Outfit', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
     color: var(--text);
     text-decoration: none;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-transform: none;
   }
+
+  nav .logo span { color: var(--accent); }
+  nav .logo .mk-in { font-size: 0.62em; }
 
   nav .nav-links {
     display: flex;
@@ -223,8 +226,9 @@
 
 <nav>
   <div class="inner">
-    <a href="https://cobaltinfx.com" class="logo">COBALT INFX</a>
+    <a href="https://cobaltinfx.com/" class="logo">Cobalt <span class="mk"><span class="mk-in">in</span>FX</span></a>
     <div class="nav-links">
+      <a href="https://cobaltinfx.com/">About</a>
       <a href="https://cobaltinfx.com/#products">Products</a>
       <a href="https://cobaltinfx.com/privacy">Privacy</a>
       <a href="https://cobaltinfx.com/#support">Support</a>
