@@ -520,6 +520,10 @@
   .tier-card ul.two-col li { break-inside: avoid; -webkit-column-break-inside: avoid; }
   @media (max-width: 600px) { .tier-card ul.two-col { column-count: 1; } }
 
+  /* ChargeSort Free vs Plus: two columns on desktop, stack on mobile */
+  #chargesort-pricing .tier-grid { grid-template-columns: 1fr 1fr; max-width: 720px; margin: 0 auto; }
+  @media (max-width: 768px) { #chargesort-pricing .tier-grid { grid-template-columns: 1fr; } }
+
   /* ─── PRIVACY ─── */
   .privacy { padding-top: 60px; padding-bottom: 60px; }
 
@@ -1182,16 +1186,17 @@
       <div class="product-badge">Product</div>
       <h2>Charge<em>Sort</em></h2>
       <p>Public charging, ranked by what a charge will actually cost you — and how long you will actually be there. Built for UK EV drivers.</p>
+      <p style="margin-top:14px; font-size:15px; color:var(--warm); line-height:1.7; max-width:480px;">No network pays to rank higher — the order you see is only ever about what's cheapest for you, never who paid.</p>
       <div class="product-badges">
         <div class="pbadge"><div class="pbadge-icon icon-lock">🔌</div> Nine UK networks</div>
         <div class="pbadge"><div class="pbadge-icon icon-chip">🚗</div> Priced for your car</div>
       </div>
     </div>
     <div class="download-cta">
-      <img src="ChargeSort1024.png" alt="ChargeSort" style="width:80px; height:80px; border-radius:18px; box-shadow: 0 4px 20px rgba(201, 168, 124, 0.3);">
-      <p style="font-size:14px; color:var(--warm); font-weight:500; margin-top:12px; letter-spacing:0.5px;">
-        <span class="tbc">App Store link — to add at launch</span>
-      </p>
+      <a href="https://apps.apple.com/gb/app/chargesort/id6800418962" target="_blank" rel="noopener" style="text-decoration:none;">
+        <img src="ChargeSort1024.png" alt="ChargeSort" style="width:80px; height:80px; border-radius:18px; box-shadow: 0 4px 20px rgba(201, 168, 124, 0.3);">
+        <p style="font-size:14px; color:var(--warm); font-weight:500; margin-top:12px; letter-spacing:0.5px;">Download on the App Store</p>
+      </a>
       <p>iPhone · iOS 18 or later</p>
     </div>
   </div>
@@ -1247,27 +1252,44 @@
     </div>
   </div>
 
-  <!-- Features & pricing -->
+  <!-- Pricing -->
   <div class="tiers" id="chargesort-pricing">
-    <div class="section-label">Features &amp; pricing</div>
-    <div class="section-title">Everything ChargeSort does for your car.</div>
-    <div class="tier-grid" style="grid-template-columns: 1fr; max-width: 720px; margin: 0 auto;">
+    <div class="section-label">Pricing</div>
+    <div class="section-title">Start free. Go Plus when it pays off.</div>
+    <div class="tier-grid">
       <div class="tier-card">
-        <div class="tier-name">ChargeSort</div>
-        <div class="tier-price">Feature list</div>
-        <div class="tier-note">Pricing and plans at launch</div>
-        <ul class="two-col">
-          <li>Chargers ranked by cost for your car model</li>
+        <div class="tier-name">Free</div>
+        <div class="tier-price">£0</div>
+        <div class="tier-note">No account required</div>
+        <ul>
+          <li>Your best charging option, ranked by cost for your car — plus one alternative</li>
           <li>Cheapest, Fastest &amp; Balanced options</li>
-          <li>Nine of the UK's major charging networks</li>
-          <li>Full ranked list of chargers</li>
-          <li>Map with up-to-date availability</li>
-          <li>Car-aware details on chargers</li>
-          <li>Reminders for the cheapest charging window</li>
-          <li>Is a membership worth it?</li>
+          <li>Map with status refreshed to the last few minutes</li>
+          <li>Plan a journey with charging stops matched to your car and range</li>
+          <li>See when charging at home is cheaper</li>
           <li>No ads</li>
           <li>Your details are never paywalled</li>
         </ul>
+      </div>
+      <div class="tier-card highlighted">
+        <div class="tier-badge">First month free</div>
+        <div class="tier-name">Plus</div>
+        <div class="tier-price">£2.99 <span>/month</span></div>
+        <div class="tier-note">Everything in Free, plus:</div>
+        <ul>
+          <li>Your member &amp; app rates — the true price with your memberships, not just walk-up</li>
+          <li>See how your rate is built (walk-up → app → member)</li>
+          <li>The full ranked list of chargers near you</li>
+          <li>Journey cost — priced legs and detour costs across your route</li>
+          <li>A price-coloured map with car-aware detail</li>
+          <li>A DC charging-curve chart for your car</li>
+          <li>Reminders for your cheapest charging window</li>
+          <li>Your memberships on Home — which you hold and whether each pays off</li>
+          <li>Is a membership worth it? — per-operator break-even maths</li>
+        </ul>
+        <div style="margin-top:14px; padding-top:10px; border-top:1px solid var(--border); font-size:11px; color:var(--warm);">
+          Annual: £24.99/year — first month free
+        </div>
       </div>
     </div>
     <div class="tier-note" style="text-align:center; margin-top:28px;">
